@@ -1,0 +1,93 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body,html{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding:0;
+}
+.navbar{
+    background-color: rgba($color: #E6E6E6, $alpha: 0.68);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    .nav{
+        align-items: center;
+        max-width: 1920px;
+        width: 85vw;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        margin: 0 auto;
+        .logo{
+            height: 1.9em;
+        }
+        .navlinks{
+            list-style: none;
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-content:space-between;
+            align-items:center;
+            column-gap: 53px;
+            li{
+                padding: 0 7%;
+                text-align: center;
+                a{
+                    text-decoration:none;
+                    color: #D93F87;
+                    font-size:1.1em;
+                    font-weight: 560;
+                }
+            }
+        }
+        .socialink{
+            ul{
+                display: grid;
+                list-style: none;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 30px;
+                li{
+                    padding: 0 2%;
+                    img{
+                        height: 1.6em;
+                    }
+                }
+            }
+        }
+    }
+}
+.hero{
+    .text-container{
+        background-color:#D93F87;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 60vw;
+        height: 90vh;
+        h1{
+            margin-top: 12%;
+            padding: 0 13%;
+            font-size: 3rem;
+            color: white;
+            line-height: 150%;
+            p{
+                margin: 0;
+            }
+        }
+        h4{
+            margin-top: 0;
+            padding: 0 13%;
+            color: #2A1B3D;
+            font-size: 1.1rem;
+        }
+    }
+    .bg{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+    }
+}

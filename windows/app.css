@@ -1,0 +1,94 @@
+.app {
+    position: absolute;
+    z-index: 6;
+    display: none;
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 5px 0 rgb(51, 51, 51);
+    padding: 0;
+    margin: 0;
+    left: 20%;
+    top: 20%;
+    font-weight: 100;
+    transition: 0.3s width, 0.3s height;
+}
+
+.titlebar {
+    z-index: 6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: max-content;
+    background-color: rgb(255, 255, 255);
+    max-height: 30px;
+}
+.titlebar:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+
+.titlebar h4 {
+    padding: 0;
+    margin: 1%;
+}
+
+.button-group {
+    display: flex;
+    height: 100%;
+}
+
+.button-group button {
+    background-color: rgb(243, 243, 243);
+    height: 100%;
+    width: 40px;
+    border: none;
+}
+.btn{
+    font-weight: bold;
+
+}
+.btn-red{
+    font-weight: bold;
+}
+.btn-red:hover {
+    background-color: rgb(255, 10, 10);
+}
+
+.btn:hover {
+    background-color: rgb(167, 167, 167);
+}
+
+.btn-red:focus {
+    background-color: rgb(201, 0, 0)
+}
+
+.btn:focus {
+    background-color: rgb(138, 138, 138)
+}
+
+.app-body {
+    z-index: 6;
+    color: rgb(0, 0, 0);
+    background-color: rgb(235, 235, 235);
+    height: 100%;
+}
+
+.maxS {
+    height: 94vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.minS {
+    height: 300px;
+    width: 300px;
+    top: 20%;
+    left: 20%;
+}
+.maximize{
+    width: 35%;
+}

@@ -9,6 +9,40 @@ body, html {
   padding: 0;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #181818;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+::-moz-scrollbar {
+  width: 8px;
+}
+
+::-moz-scrollbar-track {
+  background: #181818;
+}
+
+::-moz-scrollbar-thumb {
+  background: #888;
+  border-radius: 15px;
+}
+
+::-moz-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .navbar {
   background-color: rgba(230, 230, 230, 0.68);
   -webkit-backdrop-filter: blur(12px);
@@ -128,6 +162,19 @@ body, html {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
+}
+
+.hero .scroll {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  width: 3vw;
+}
+
+.skills .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=style.css.map */

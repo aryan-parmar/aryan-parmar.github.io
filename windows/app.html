@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows</title>
+</head>
+<link rel="stylesheet" href="./app.css  ">
+<style>
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .grid-itm {
+        justify-self: center;
+    }
+
+    .taskbar-item {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        align-items: center;
+    }
+
+    .taskbar-item:hover {
+        background-color: rgba(63, 63, 63, 0.5);
+    }
+
+    .desktop-item {
+        z-index: 2;
+        height: 100%;
+        width: 100%;
+        display: grid;
+        align-items: center;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .desktop-item:hover {
+        background-color: rgba(230, 230, 230, 0.5);
+    }
+
+    /* desktop */
+    .desktop {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: grid;
+        width: 100%;
+        height: 97vh;
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+        grid-template-rows: repeat(auto-fill, minmax(60px, 1fr));
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* taskbar */
+    .background {
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+        z-index: 1;
+    }
+
+    .main-taskbar {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 10000;
+        width: 100%;
+    }
+
+    .taskbar {
+        background-color: rgba(20, 20, 20, 0.7);
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(46px, 1fr));
+        height: 6vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo {
+        height: 20px;
+        width: auto;
+        padding: 1%;
+        justify-self: center;
+    }
+
+    .search {
+        height: 99%;
+        background-color: rgb(54, 54, 54);
+        outline-width: 0;
+        grid-column: 2 / span 7;
+        padding: 3%;
+        border: 1px solid grey;
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: rgb(0, 0, 0);
+    }
+
+    .search:focus {
+        background-color: rgb(255, 255, 255);
+        border-color: blue;
+    }
+
+    .dt-holder {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        height: 6vh;
+        background-color: rgba(20, 20, 20, 0.7);
+        width: 70px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .date {
+        color: white;
+        font-size: 0.8em;
+        font-weight: 400;
+    }
+
+    .time {
+        color: white;
+        font-size: 0.8em;
+        font-weight: 400;
+    }
+</style>
+
+<body>
+    <img src="./wal.jpg" alt="" class="background">
+    <div class="desktop">
+        <div class="desktop-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Windows_logo_-_2012.svg" class="logo grid-itm"
+                id="app-1">
+        </div>
+    </div>
+    <div class="main-taskbar">
+        <div class="taskbar" id="taskbar">
+            <div class="taskbar-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Windows_logo_-_2012.svg"
+                    class="logo grid-itm">
+            </div>
+            <input type="text" name="Search" id="Search" placeholder="Search" class="search" autocomplete="off"
+                spellcheck="off">
+        </div>
+        <div class="dt-holder">
+            <h5 class="grid-itm time"></h5>
+            <h5 class="grid-itm date"></h5>
+        </div>
+    </div>
+</body>
+<script src="./app.js"></script>
+<script>
+    const AppWindo = new AppWindow();
+    AppWindo.CreateWindow("Aryan", "<h1>hey!!!!</h1>");
+    document.querySelector('.desktop-item').addEventListener('dragend', (e) => {
+    })
+    function setTimeAndDate() {
+        var date = new Date();
+        document.querySelector('.date').innerHTML = date.getUTCDate() + '-' + date.getUTCMonth() + '-' + date.getUTCFullYear();
+        document.querySelector('.time').innerHTML = date.getHours() + ':' + date.getMinutes();
+    }
+    document.querySelector('.dt-holder').addEventListener('click', () => {
+
+    })
+
+    setTimeAndDate();
+    setInterval(setTimeAndDate, 5000);
+</script>
+
+</html>

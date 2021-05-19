@@ -15,6 +15,7 @@
     background-color: rgb(235, 235, 235);
     min-height: 150px;
     min-width: 150px;
+    max-height: 94vh;
 }
 
 .titlebar {

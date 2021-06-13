@@ -29,6 +29,11 @@ body, html {
   padding-top: 5%;
   width: 30vw;
   font-family: 'Spartan';
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media (max-width: 900px) {

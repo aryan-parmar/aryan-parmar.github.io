@@ -24,6 +24,8 @@ body,html{
     padding-top: 5%;
     width: 30vw;
     font-family: 'Spartan';
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
     @include tab{
         padding-top: 5%;
         width: 50vw;

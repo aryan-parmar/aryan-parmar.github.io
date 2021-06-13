@@ -31,6 +31,20 @@ body, html {
   font-family: 'Spartan';
 }
 
+@media (max-width: 900px) {
+  .app {
+    padding-top: 5%;
+    width: 50vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding-top: 15%;
+    width: 90vw;
+  }
+}
+
 .app .titlebar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -164,6 +178,18 @@ body, html {
           justify-content: center;
   border-radius: 7px;
   height: 50vh;
+}
+
+@media (max-width: 900px) {
+  .app .inputs {
+    height: 70vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .app .inputs {
+    height: 60vh;
+  }
 }
 
 .app .inputs .button-group {

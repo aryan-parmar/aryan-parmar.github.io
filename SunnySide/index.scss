@@ -335,13 +335,14 @@ body,html{
         letter-spacing: 5px;
         color: var(--grayish-blue);
         padding-bottom: 5%;
+        text-align: center;
     }
     .cards{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
         column-gap: 3rem;
         flex:0.6;
-        width: 80%;
+        width: 90%;
         div{
             display: flex;
             flex-direction: column;

@@ -501,6 +501,7 @@ body, html {
   letter-spacing: 5px;
   color: var(--grayish-blue);
   padding-bottom: 5%;
+  text-align: center;
 }
 
 .review .cards {
@@ -513,7 +514,7 @@ body, html {
   -webkit-box-flex: 0.6;
       -ms-flex: 0.6;
           flex: 0.6;
-  width: 80%;
+  width: 90%;
 }
 
 .review .cards div {

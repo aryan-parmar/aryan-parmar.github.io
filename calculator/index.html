@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      background-color: beige;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Aryy</a>.
+  </div>
+  <div class="app theme-1" id="app">
+    <div class="titlebar">
+      <h2>calc</h2>
+      <div class="theme-selector">
+        <h5>THEME</h5>
+        <h4><span>1</span><span>2</span><span>3</span></h4>
+        <div class="slider" id='slider'>
+          <div class="theme-1" id='slider-button'></div>
+        </div>
+      </div>
+    </div>
+    <div class="display-calc">
+      <input type='text' id='display'>
+    </div>
+    <div class="inputs">
+      <div class="button-group">
+        <button data-value='8'>8</button>
+        <button data-value='7'>7</button>
+        <button data-value='9'>9</button>
+        <button data-value='del' class='del'>DEL</button>
+        <button data-value='4'>4</button>
+        <button data-value='5'>5</button>
+        <button data-value='6'>6</button>
+        <button data-value='+'>+</button>
+        <button data-value='1'>1</button>
+        <button data-value='2'>2</button>
+        <button data-value='3'>3</button>
+        <button data-value='-'>-</button>
+        <button data-value='point'>.</button>
+        <button data-value='0'>0</button>
+        <button data-value='/'>/</button>
+        <button data-value='x'>x</button>
+        <button data-value='reset' class="reset">RESET</button>
+        <button data-value='equal' class="equal">=</button>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="theme.js"></script>
+</html>

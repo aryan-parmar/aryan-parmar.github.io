@@ -1,0 +1,46 @@
+
+body {
+}
+@media (min-width: 1440px) {
+    .head h1{
+      font-size: 4rem !important;
+    }
+    .head h3{
+      font-size: 1.8rem !important;
+      margin-top: 10px;
+    }
+    .head p{
+      line-height: 40px;
+    }
+    .about-head h1{
+      font-size: 7rem !important;
+    }
+    .about-head h3{
+      font-size: 3.5rem !important;
+    }
+  }
+@media (min-width: 1024px) {
+  .head h1{
+    font-size: 4rem !important;
+  }
+  .head h3{
+    font-size: 1.8rem !important;
+    margin-top: 10px;
+    margin-bottom: 0 !important;
+  }
+  .about-head h1{
+    font-size: 6rem !important;
+  }
+  .about-head h3{
+    font-size: 3rem !important;
+  }
+}
+@media (min-width: 1800px) {
+  .about-head h1{
+    font-size: 8rem !important;
+  }
+  .about-head h3{
+    font-size: 5rem !important;
+  }
+  
+}

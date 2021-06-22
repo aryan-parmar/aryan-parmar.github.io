@@ -1,0 +1,32 @@
+{
+    "theme1":{
+        "name": "light",
+        "colors": {
+            "background": "white",
+            "primaryFont": "black",
+            "secondaryFont": "#676666",
+            "btnActive": "#EBEBEB",
+            "tertiaryFont": "#878787",
+            "aboutPrimary": "#3C1B4F",
+            "aboutSecondary": "#883EB4",
+            "skillBtn": "#FBFBFB",
+            "navColor": "#F5F5F5",
+            "boxShadowColor": "rgba(0,0,0,0.16)"
+        }
+    },
+    "theme2":{
+        "name": "Dark",
+        "colors": {
+            "background": "#202124",
+            "primaryFont": "white",
+            "secondaryFont": "#D9D9D9",
+            "btnActive": "#4F525A",
+            "tertiaryFont": "#CBCBCB",
+            "aboutPrimary": "#D68EFF",
+            "aboutSecondary": "#B437FF",
+            "skillBtn": "#282A2D",
+            "navColor": "#292A2E",
+            "boxShadowColor": "#202124"
+        }
+    }
+}

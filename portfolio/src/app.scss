@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+*{
+    margin: 0;
+    padding: 0;
+}
+body,html{
+    height: 100%;
+    width: 100%;
+    font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.dropdown-list{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    .progress-bar{
+        margin: 10px 0;
+        width: 100%;
+        height: 8px;
+        background-color: #E4E4E4;
+        border-radius: 20px;
+        .progress-slider{
+            width: 0%;
+            transition: width 1s ease;
+            border-radius: 20px;
+            height: 100%;
+            background-color: #A86DDE;
+        }
+    }
+}
+.rotate{
+    transform: rotate(180deg);
+}
+.navlink{
+    li{
+        a{
+            text-decoration: none;
+            font-size: larger;
+            font-weight: bold;
+        }
+    }
+}

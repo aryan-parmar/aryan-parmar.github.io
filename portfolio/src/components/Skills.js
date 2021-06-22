@@ -36,7 +36,7 @@ export default function Skills() {
                                     <text id="_" data-name="&lt;/&gt;" transform="translate(0 19)" fill="#a86dde" fontSize="20" fontFamily="Montserrat-Bold, Montserrat" fontWeight="700"><tspan x="0" y="0">&lt;/&gt;</tspan></text>
                                 </Svg>
                                 <h3 style={{ flex: 1, marginLeft: '10px' }}>Frontend</h3>
-                                <Svg width="15.83" height="9.566" viewBox="0 0 15.83 9.566" className={displayF === 'flex' ? '' : 'rotate'}>
+                                <Svg width="15.83" height="9.566" viewBox="0 0 15.83 9.566" className={displayF === '1' ? '' : 'rotate'}>
                                     <g id="UP_ARROW" data-name="UP ARROW" transform="translate(2.119 2.119)" >
                                         <line id="Line_5" data-name="Line 5" y1="5.328" x2="5.795" transform="translate(0)" fill="none" stroke="#707070" strokeLinecap="round" strokeWidth="3" />
                                         <line id="Line_6" data-name="Line 6" x1="5.795" y1="5.328" transform="translate(5.795)" fill="none" stroke="#707070" strokeLinecap="round" strokeWidth="3" />
@@ -98,7 +98,7 @@ export default function Skills() {
                                     </g>
                                 </Svg>
                                 <h3 style={{ flex: 1, marginLeft: '10px' }}>Backend</h3>
-                                <Svg width="15.83" height="9.566" viewBox="0 0 15.83 9.566" className={displayB === 'flex' ? '' : 'rotate'}>
+                                <Svg width="15.83" height="9.566" viewBox="0 0 15.83 9.566" className={displayB === '1' ? '' : 'rotate'}>
                                     <g id="UP_ARROW" data-name="UP ARROW" transform="translate(2.119 2.119)">
                                         <line id="Line_5" data-name="Line 5" y1="5.328" x2="5.795" transform="translate(0)" fill="none" stroke="#707070" strokeLinecap="round" strokeWidth="3" />
                                         <line id="Line_6" data-name="Line 6" x1="5.795" y1="5.328" transform="translate(5.795)" fill="none" stroke="#707070" strokeLinecap="round" strokeWidth="3" />

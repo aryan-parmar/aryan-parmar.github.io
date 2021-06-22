@@ -25,6 +25,7 @@ function App() {
     );
 }
 const GlobalStyle = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;900&display=swap');
 *{
     transition: background-color 0.1s linear;
 }

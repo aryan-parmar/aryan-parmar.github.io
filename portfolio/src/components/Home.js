@@ -58,7 +58,7 @@ export default function Home() {
 }
 const HomeWrapper = styled.section`
     width: 100%;
-    height: 95vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -150,6 +150,7 @@ const ContactButton = styled.a`
     width: max-content;
     border-radius: 10px;
     box-shadow: 5px 5px 0px 0 #883EB4;
+    margin-bottom: 30px;
     &:hover{
         background-color: #A460E2;
     }

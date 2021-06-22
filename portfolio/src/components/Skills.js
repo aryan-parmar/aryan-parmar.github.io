@@ -148,7 +148,7 @@ const SkillWrapper = styled.section`
     background-color: ${props=> props.theme.colors.background};
 `
 const Heading = styled.div`
-    margin-top: 50px;
+    margin-top: 100px;
 `
 const Dropdown = styled.div`
     margin-top: 30px;

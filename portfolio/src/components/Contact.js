@@ -35,6 +35,7 @@ const ContactWrapper = styled.section`
 `
 const Heading = styled.div`
     margin-bottom: 50px;
+    margin-top: 50px;
 `
 const H2 = styled.h2`
     margin-top: 50px;

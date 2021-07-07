@@ -11,6 +11,10 @@ class AppWindow {
             container.classList.add('minS');
             container.style.height = dimensions.h;
             container.style.width = dimensions.w;
+            document.querySelectorAll(".app").forEach((a) => {
+                a.style.zIndex = 6;
+            })
+            container.style.zIndex = 10;
             container.id = 'app'
             container.innerHTML = data
             document.body.appendChild(container)
@@ -27,7 +31,18 @@ class AppWindow {
         const MaximiseBtn = document.querySelector('.title-num-' + appId + ' #maximise');
 
         closeBtn.addEventListener('click', () => this.close(appId));
-
+        titlebar.addEventListener("click", () => {
+            document.querySelectorAll(".app").forEach((a) => {
+                a.style.zIndex = 6;
+            })
+            document.querySelector('.app-num-' + appId).style.zIndex = 10;
+        })
+        document.querySelector('.app-num-' + appId + '> .app-body').addEventListener("click", () => {
+            document.querySelectorAll(".app").forEach((a) => {
+                a.style.zIndex = 6;
+            })
+            document.querySelector('.app-num-' + appId).style.zIndex = 10;
+        })
         MaximiseBtn.addEventListener('click', () => {
             const currentapp = document.querySelector('.app-num-' + appId)
             if (currentapp.classList.contains('maxS')) {
@@ -131,18 +146,31 @@ class AppWindow {
         icon.classList.add('grid-itm')
         appicon.append(icon)
         taskbar.appendChild(appicon)
-        document.getElementById("app-id" + appId).addEventListener('click', () => {
-            const a = document.querySelector(".app-num-" + appId);
-            if (a.style.zIndex == 7) {
-                a.style.zIndex = -10
-            } else {
-                a.style.zIndex = 7
-            }
-        })
+        document.getElementById("app-id" + appId).addEventListener('click', () => this.minOpen(appId))
+    }
+    minOpen(appId) {
+        let a = document.querySelector(".app-num-" + appId);
+        if (a.classList.contains("minimizeAnimation")) {
+            a.classList.remove('minimizeAnimation')
+            document.querySelectorAll(".app").forEach((b) => {
+                b.style.zIndex = 6;
+            })
+            a.style.zIndex = 10
+        }
+        else if(a.style.zIndex === '6'){
+            document.querySelectorAll(".app").forEach((b) => {
+                b.style.zIndex = 6;
+            })
+            a.style.zIndex = 10
+        }
+        else {
+            a.classList.add("minimizeAnimation")
+        }
     }
     minimise(appId) {
         const currentapp = document.querySelector('.app-num-' + appId)
-        currentapp.style.zIndex = -10;
+        // currentapp.style.zIndex = -10;
+        currentapp.classList.add("minimizeAnimation");
     }
     maximize(appId) {
         const currentapp = document.querySelector('.app-num-' + appId)

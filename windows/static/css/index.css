@@ -10,7 +10,9 @@
     overflow: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+body{
+    height: 100vh;
+}
 .grid-itm {
     justify-self: center;
 }
@@ -140,4 +142,23 @@
     top: 0;
     left: 0;
     width: 100%;
+}
+.app-drawer{
+    position: absolute;
+    width: 45vw;
+    left: 0;
+    bottom: 6vh;
+    background-color: rgb(53, 53, 53);
+    z-index: 100000;
+    transition: height 0.3s ease-in-out, opacity 0.4s ease;
+}
+.closed{
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+.opened{
+    height: 80vh;
+    opacity: 1;
+    pointer-events: all;
 }

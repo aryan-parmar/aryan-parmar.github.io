@@ -12,19 +12,28 @@ function setTimeAndDate() {
 }
 helloWorld.onclick = ()=>{
     const App = new AppWindow();
-    App.CreateWindow("Aryan", "<h1>hey!!!!</h1>","contact-us.svg", pid, {h:'500px', w:'500px'});
+    App.CreateWindow("About me", `<div class="sc-crzoAE DykGo head"><h1 style="font-size: 2.8rem; margin-bottom: 10px; font-weight: bold; color: white;">Hi, I'am Aryan</h1><p style="color: #efefef; margin-bottom: 10px">Full stack web development using varies technology developing high quality websites.</p><a href="aary114.github.io" style="text-decoration: none; color: lightBlue; padding-top: 20px;">Visit my website</a></div>`,"./static/images/contact-us.svg", pid, {h:'500px', w:'500px'});
     pid+=1
 }
 github.onclick = ()=>{
     const App = new AppWindow();
-    App.CreateWindow("Github", "<h1><p>hey there visit my github for more info<br> and also for more intereting projects.</p></h1><a href='https://github.com/aary114'>Link to github.</a>","github.svg", pid, {h:'500px', w:'500px'});
+    App.CreateWindow("Github", "<h1><p>hey there visit my github for more info<br> and also for more intereting projects.</p></h1><a href='https://github.com/aary114'>Link to github.</a>","./static/images/github.svg", pid, {h:'500px', w:'500px'});
     pid+=1
 }
 iframe.onclick = ()=>{
     const App = new AppWindow();
-    App.CreateWindow("My website", "Coming soon!!","", pid, {h:'500px', w:'500px'});
+    App.CreateWindow("calc", `<iframe src='https://aary114.github.io/calculator' height='100%' width='100%'></iframe>` ,"./favicon-32x32.png", pid, {h:'600px', w:'300px'});
     pid+=1
 }
-
+document.querySelector('.win-logo').addEventListener('click', ()=>{
+    let apd = document.querySelector('.app-drawer')
+    if(apd.classList.contains('closed')){
+        apd.classList.remove('closed')
+        apd.classList.add('opened')
+    }else{
+        apd.classList.remove('opened')
+        apd.classList.add('closed')
+    }
+})
 setTimeAndDate();
 setInterval(setTimeAndDate, 5000);

@@ -11,8 +11,8 @@
     top: 20%;
     font-weight: 100;
     resize: both;
-    transition: 0.1s width, 0.1s height;
-    background-color: rgb(235, 235, 235);
+    transition: 0.1s width, 0.1s height, 0.5s transform cubic-bezier(0.4, 0, 0.21, 0.96), 0.5s opacity ease-in;
+    background-color: rgb(77, 77, 77);
     min-height: 150px;
     min-width: 150px;
     max-height: 94vh;
@@ -23,38 +23,45 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 5vh;
-    background-color: rgb(255, 255, 255);
-    /* max-height: 30px; */
+    height: 4.3vh;
+    background-color: rgb(19, 19, 19);
 }
 .titlebar:active {
     cursor: grabbing;
     cursor: -moz-grabbing;
     cursor: -webkit-grabbing;
 }
-
 .titlebar h4 {
     padding: 0;
-    margin: 1%;
+    margin: 0 1%;
+    pointer-events: none;
+    flex: 1;
+    font-weight: 400;
+    color: #efefef;
+    font-size: 0.9rem;
 }
 
 .button-group {
     display: flex;
     height: 100%;
+    background-color: rgb(19, 19, 19);
 }
 
 .button-group button {
-    background-color: rgb(243, 243, 243);
+    background-color: rgb(19, 19, 19);
     height: 100%;
     width: 40px;
     border: none;
 }
 .btn{
     font-weight: bold;
-
+    
 }
 .btn-red{
+    color: #efefef;
     font-weight: bold;
+    font-size: 1.01rem;
+    padding-bottom: 5px;
 }
 .btn-red:hover {
     background-color: rgb(255, 10, 10);
@@ -64,11 +71,11 @@
     background-color: rgb(167, 167, 167);
 }
 
-.btn-red:focus {
+.btn-red:active {
     background-color: rgb(201, 0, 0)
 }
 
-.btn:focus {
+.btn:active {
     background-color: rgb(138, 138, 138)
 }
 
@@ -103,4 +110,9 @@
 .ico{
     width:3vh;
     margin: 0 1%;
+    pointer-events: none;
+}
+.minimizeAnimation{
+    transform: scaleX(0) translateY(90vh);
+    opacity: 0;
 }

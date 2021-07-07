@@ -12,12 +12,12 @@ function setTimeAndDate() {
 }
 helloWorld.onclick = ()=>{
     const App = new AppWindow();
-    App.CreateWindow("About me", `<div class="sc-crzoAE DykGo head"><h1 style="font-size: 2.8rem; margin-bottom: 10px; font-weight: bold; color: white;">Hi, I'am Aryan</h1><p style="color: #efefef; margin-bottom: 10px">Full stack web development using varies technology developing high quality websites.</p><a href="https://aary114.github.io/" style="text-decoration: none; color: lightBlue; padding-top: 20px;">Visit my website</a></div>`,"./static/images/contact-us.svg", pid, {h:'500px', w:'500px'});
+    App.CreateWindow("About me", `<div class="sc-crzoAE DykGo head"><h1 style="font-size: 2.8rem; margin-bottom: 10px; font-weight: bold; color: white;">Hi, I'am Aryan</h1><p style="color: #efefef; margin-bottom: 10px">Full stack web development using varies technology developing high quality websites.</p><a href="https://aary114.github.io/" style="text-decoration: none; color: lightBlue; padding-top: 20px;">Visit my portfolio</a></div>`,"./static/images/contact-us.svg", pid, {h:'500px', w:'500px'});
     pid+=1
 }
 github.onclick = ()=>{
     const App = new AppWindow();
-    App.CreateWindow("Github", "<h1><p>hey there visit my github for more info<br> and also for more intereting projects.</p></h1><a href='https://github.com/aary114'>Link to github.</a>","./static/images/github.svg", pid, {h:'500px', w:'500px'});
+    App.CreateWindow("Github", "<h1><p style='margin-bottom: 10px; font-weight: bold; color: white;'>hey there visit my github for more info<br> and also for more intereting projects.</p></h1><a href='https://github.com/aary114' style='text-decoration: none; color: lightBlue; padding-top: 20px;'>Link to github.</a>","./static/images/github.svg", pid, {h:'500px', w:'500px'});
     pid+=1
 }
 iframe.onclick = ()=>{

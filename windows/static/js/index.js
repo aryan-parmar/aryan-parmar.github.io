@@ -12,7 +12,7 @@ function setTimeAndDate() {
 }
 helloWorld.onclick = ()=>{
     const App = new AppWindow();
-    App.CreateWindow("About me", `<div class="sc-crzoAE DykGo head"><h1 style="font-size: 2.8rem; margin-bottom: 10px; font-weight: bold; color: white;">Hi, I'am Aryan</h1><p style="color: #efefef; margin-bottom: 10px">Full stack web development using varies technology developing high quality websites.</p><a href="aary114.github.io" style="text-decoration: none; color: lightBlue; padding-top: 20px;">Visit my website</a></div>`,"./static/images/contact-us.svg", pid, {h:'500px', w:'500px'});
+    App.CreateWindow("About me", `<div class="sc-crzoAE DykGo head"><h1 style="font-size: 2.8rem; margin-bottom: 10px; font-weight: bold; color: white;">Hi, I'am Aryan</h1><p style="color: #efefef; margin-bottom: 10px">Full stack web development using varies technology developing high quality websites.</p><a href="https://aary114.github.io/" style="text-decoration: none; color: lightBlue; padding-top: 20px;">Visit my website</a></div>`,"./static/images/contact-us.svg", pid, {h:'500px', w:'500px'});
     pid+=1
 }
 github.onclick = ()=>{

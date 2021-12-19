@@ -14,13 +14,13 @@ const About = React.lazy(
 const Skills = React.lazy(
     () =>
         new Promise((resolve, reject) =>
-            setTimeout(() => resolve(import("./components/Skills")), 3000)
+            setTimeout(() => resolve(import("./components/Skills")), 500)
         )
 );
 const Contact = React.lazy(
     () =>
         new Promise((resolve, reject) =>
-            setTimeout(() => resolve(import("./components/Contact")), 3500)
+            setTimeout(() => resolve(import("./components/Contact")), 500)
         )
 );
 

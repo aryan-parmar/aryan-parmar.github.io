@@ -12,7 +12,7 @@ export default function Contact() {
                         <H2>CONTACT</H2>
                     </Heading>
                     <Wrapper>
-                        <BackGround src='/bg-3.svg' />
+                        <BackGround src='/bg-3.svg' alt='contact'/>
                         <Form action="https://formsubmit.co/aeb9c4d5d55a289f46bb8893cd721cd2" method="POST">
                             <Input type='text' placeholder="Name" required={true} name='name'/>
                             <Input type='email' placeholder="Email" required={true} name='email'/>
@@ -74,12 +74,9 @@ const Form = styled.form`
     display: flex;
     flex-direction: column;
     .submit-btn{
-        box-shadow: 3px 1px 10px 0 ${props => props.theme.colors.dropShadowColor};
-        color:#B879B1;
         width: max-content;
         padding: 0 20px;
         &:active{
-            border: 2px solid grey;
             box-shadow: 0px 0px 0px 0 #883EB4;
             transform: translate(5px, 5px);
         }
@@ -93,18 +90,18 @@ const Input = styled.input`
     outline: none;
     font-size: 1.2rem;
     font-weight: 600;
-    box-shadow: 3px 1px 10px 0 ${props => props.theme.colors.dropShadowColor};
+    background-color: #A86DDE;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0px 0 #883EB4;
     border: none;
-    background-color: ${props => props.theme.colors.background};
-    color: #B879B1;
+    color: white;
     &::placeholder{
-        color: #B879B1;
+        color: white;
     }
 `
 const TextArea = styled.textarea`
     padding-left: 3%;
-    color: #B879B1;
-    box-shadow: 3px 1px 10px 0 ${props => props.theme.colors.dropShadowColor};
+    color: white;
     font-size: 1.2rem;
     outline: none;
     border: none;
@@ -112,10 +109,12 @@ const TextArea = styled.textarea`
     padding-top: 3%;
     font-family: 'Montserrat';
     font-weight: 600;
-    background-color: ${props => props.theme.colors.background};
     margin-bottom: 20px;
+    background-color: #A86DDE;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0px 0 #883EB4;
     &::placeholder{
-        color: #B879B1;
+        color: white;
 
     }
 `

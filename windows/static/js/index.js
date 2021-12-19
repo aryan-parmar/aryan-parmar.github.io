@@ -22,7 +22,7 @@ github.onclick = ()=>{
 }
 iframe.onclick = ()=>{
     const App = new AppWindow();
-    App.CreateWindow("calc", `<iframe src='https://aary114.github.io/calculator' height='100%' width='100%'></iframe>` ,"./favicon-32x32.png", pid, {h:'600px', w:'300px'});
+    App.CreateWindow("calc", `<iframe src='https://aary114.github.io/calculator' height='100%' width='100%'></iframe>` ,"./static/images/favicon-32x32.png", pid, {h:'600px', w:'300px'});
     pid+=1
 }
 document.querySelector('.win-logo').addEventListener('click', ()=>{

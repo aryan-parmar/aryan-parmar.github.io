@@ -13,7 +13,7 @@ export default function About() {
                             <h1 style={{ fontSize: '3.8rem', marginBottom: '0px', fontWeight: '900', textAlign: 'center', color:theme.colors.aboutPrimary }}>ABOUT</h1>
                             <h3 style={{ fontSize: '2rem', marginBottom: '0px', fontWeight: '900', textAlign: 'center', color: theme.colors.aboutSecondary }}>ME.</h3>
                         </Heading>
-                        <BackGround src="/bg-2.svg" />
+                        <BackGround src="/bg-2.svg" alt='about'/>
                         <Wrapper>
                             <P>
                                 I am currently a student

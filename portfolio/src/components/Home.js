@@ -28,7 +28,7 @@ export default function Home() {
                                 </Svg>
                             </a>
                         </SocialIconContainer>
-                        <BackGround1 src='/bg-1.svg'></BackGround1>
+                        <BackGround1 src='/bg-1.svg' alt='Home'></BackGround1>
                         <Wrapper className='head'>
                             <h1 style={{ fontSize: '2.8rem', marginBottom: '10px', fontWeight: 'bold', color: theme.colors.primaryFont }}>Hi, I'am Aryan</h1>
                             <h3 style={{ fontSize: '1.4rem', marginBottom: '15px', fontWeight: '600', color: theme.colors.secondaryFont }}>Full stack developer</h3>
@@ -41,7 +41,7 @@ export default function Home() {
                     </Data>
                     <Scroll>
                         <a href="#about">
-                        <h4>SCROLL DOWN</h4>
+                        <h4>KNOW MORE</h4>
                         <Svg xmlns="http://www.w3.org/2000/svg" width="26.241" height="27.619" viewBox="0 0 27.241 28.619">
                             <g id="Arrow" transform="translate(-902.379 -77)">
                                 <line id="Line_1" data-name="Line 1" y2="25" transform="translate(916.5 78.5)" fill="none" stroke="#883eb4" strokeLinecap="round" strokeWidth="3" />

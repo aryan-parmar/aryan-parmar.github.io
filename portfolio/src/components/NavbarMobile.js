@@ -1,12 +1,24 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import { ThemeContext } from './ThemeContext'
-import * as Theme from '../Theme.json'
+import Theme from '../Theme.json'
 
 export default function NavbarMobile() {
     var [theme, setTheme] = React.useContext(ThemeContext)
     var [showN, setShowN] = React.useState('0')
     var [heigthN, setHeightN] = React.useState('0vh')
+    React.useEffect(()=>{
+        if(localStorage.getItem("theme")===null){
+            localStorage.setItem("theme", "2")
+            setTheme(Theme.theme2)
+        }else{
+            if(localStorage.getItem("theme")==="2"){
+                setTheme(Theme.theme2)
+            }else{
+                setTheme(Theme.theme1)
+            }
+        }
+    },[])
     function navButton() {
         if (showN === '0') {
             setShowN('1')
@@ -19,9 +31,11 @@ export default function NavbarMobile() {
     }
     function toggleTheme() {
         if (theme.name === "light") {
+            localStorage.setItem("theme", "2")
             setTheme(Theme.theme2)
         }
         else {
+            localStorage.setItem("theme", "1")
             setTheme(Theme.theme1)
         }
     }

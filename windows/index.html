@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,26 +11,27 @@
 <link rel="stylesheet" href="./static/css/index.css">
 
 <body>
-    <img src="./static/images/win11.jpg" alt="" class="background">
-    <section class="base-window">
+    <img src="./static/images/scenary.jpg" alt="" class="background">
+    <section class="base-window" ondragover="(e)=> e.preventDefault()">
         <div class="desktop">
-            <div class="desktop-item">
-                <img src="./static/images/contact-us.svg" class="app-icon grid-itm" id="app-1">
+            <div class="desktop-item" title="about me" draggable="true">
+                <img src="./static/images/contact-us.svg" class="app-icon grid-itm" draggable='false' id="app-1">
             </div>
-            <div class="desktop-item app-2">
+            <div class="desktop-item app-2" title="my Github">
                 <img src="./static/images/github.svg" class="app-icon grid-itm" id="app-2">
             </div>
-            <div class="desktop-item">
+            <div class="desktop-item" title="calculator">
                 <img src="./static/images/calculator.png" class="app-icon grid-itm" id="app-3">
             </div>
         </div>
         <div class="main-taskbar">
             <div class="taskbar" id="taskbar">
                 <div class="taskbar-item win-logo">
-                    <img src="./static/images/WindowsLogo.svg"class="logo grid-itm">
+                    <img src="./static/images/WindowsLogo.svg" class="logo grid-itm" title="start">
                     <div class='app-drawer closed'></div>
                 </div>
-                <input type="text" name="Search" id="Search" placeholder="Search" class="search" autocomplete="off" spellcheck="off">
+                <input type="text" name="Search" id="Search" placeholder="Search" class="search" autocomplete="off"
+                    spellcheck="off">
             </div>
             <div class="dt-holder">
                 <h5 class="grid-itm time"></h5>
@@ -40,4 +42,5 @@
 </body>
 <script src="./static/js/app.js"></script>
 <script src="./static/js/index.js"></script>
+
 </html>

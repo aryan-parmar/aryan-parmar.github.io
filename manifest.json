@@ -1,6 +1,7 @@
 {
   "short_name": "Aryan",
   "name": "Aryan Parmar",
+  "description": "its my portfolio website",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,8 +19,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "https://aary114.github.io",
+  "start_url": ".",
   "display": "standalone",
-  "theme_color": "#202124",
-  "background_color": "#202124"
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
 }

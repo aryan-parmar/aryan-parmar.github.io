@@ -1,13 +1,28 @@
-import { useState } from 'react'
+import React, { useState, Suspense } from 'react'
 import './app.css'
 import NavbarMobile from './components/NavbarMobile'
 import Home from './components/Home';
-import About from './components/About';
-import Skills from './components/Skills';
-import Contact from './components/Contact';
 import { ThemeContext } from './components/ThemeContext';
-import * as Theme from './Theme.json'
+import Theme from './Theme.json'
 import { createGlobalStyle } from 'styled-components'
+const About = React.lazy(
+    () =>
+        new Promise((resolve, reject) =>
+            setTimeout(() => resolve(import("./components/About")), 100)
+        )
+);
+const Skills = React.lazy(
+    () =>
+        new Promise((resolve, reject) =>
+            setTimeout(() => resolve(import("./components/Skills")), 3000)
+        )
+);
+const Contact = React.lazy(
+    () =>
+        new Promise((resolve, reject) =>
+            setTimeout(() => resolve(import("./components/Contact")), 3500)
+        )
+);
 
 function App() {
     var [theme, setTheme] = useState(Theme.theme2)
@@ -17,9 +32,15 @@ function App() {
                 <GlobalStyle theme={theme} />
                 <NavbarMobile theme={theme} />
                 <Home theme={theme} />
-                <About theme={theme} />
-                <Skills theme={theme} />
-                <Contact theme={theme} />
+                <Suspense fallback={<div>Loading</div>}>
+                    <About theme={theme} />
+                </Suspense>
+                <Suspense fallback={<div>Loading</div>}>
+                    <Skills theme={theme} />
+                </Suspense>
+                <Suspense fallback={<div>Loading</div>}>
+                    <Contact theme={theme} />
+                </Suspense>
             </ThemeContext.Provider>
         </>
     );

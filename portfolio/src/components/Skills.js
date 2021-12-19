@@ -21,6 +21,18 @@ export default function Skills() {
             setheightB('0px')
         }
     }
+    let percentage = {
+        html: "80%",
+        css: "88%",
+        javascript: "82%",
+        scss: "88%",
+        "react": "80%",
+        styled:"85%",
+        node:"90%",
+        express:"80%",
+        python:"60%",
+        mongo:"70%",
+    }
     return (
         <>
 
@@ -47,43 +59,38 @@ export default function Skills() {
                                 <div>
                                     <h4>Html</h4>
                                     <div className='progress-bar'>
-                                        <div className='progress-slider' style={{ width: '80%' }}></div>
+                                        <div className='progress-slider' style={{ width: `${displayF==="1"? percentage.html: "0%"}` }}></div>
                                     </div>
                                 </div>
                                 <div>
                                     <h4>CSS</h4>
                                     <div className='progress-bar'>
-                                        <div className='progress-slider' style={{ width: '88%' }}></div>
+                                        <div className='progress-slider' style={{ width: `${displayF==="1"? percentage.css: "0%"}` }}></div>
                                     </div>
                                 </div>
                                 <div>
                                     <h4>JavaScript</h4>
                                     <div className='progress-bar'>
-                                        <div className='progress-slider' style={{ width: '82%' }}></div>
+                                        <div className='progress-slider' style={{ width: `${displayF==="1"? percentage.javascript: "0%"}` }}></div>
                                     </div>
                                 </div>
                                 <div>
                                     <h4>SCSS</h4>
                                     <div className='progress-bar'>
-                                        <div className='progress-slider' style={{ width: '88%' }}></div>
+                                        <div className='progress-slider' style={{ width: `${displayF==="1"? percentage.scss: "0%"}` }}></div>
                                     </div>
                                 </div>
                                 <div>
                                     <h4>React</h4>
                                     <div className='progress-bar'>
-                                        <div className='progress-slider' style={{ width: '70%' }}></div>
+                                        <div className='progress-slider' style={{ width: `${displayF==="1"? percentage.react: "0%"}` }}></div>
                                     </div>
                                 </div>
-                                <div>
-                                    <h4>Redux</h4>
-                                    <div className='progress-bar'>
-                                        <div className='progress-slider' style={{ width: '50%' }}></div>
-                                    </div>
-                                </div>
+                                
                                 <div>
                                     <h4>Styled Component</h4>
                                     <div className='progress-bar'>
-                                        <div className='progress-slider' style={{ width: '80%' }}></div>
+                                        <div className='progress-slider' style={{ width: `${displayF==="1"? percentage.styled: "0%"}` }}></div>
                                     </div>
                                 </div>
                             </DropdownF>
@@ -109,25 +116,25 @@ export default function Skills() {
                                 <div>
                                     <h4>Node js</h4>
                                     <div className='progress-bar'>
-                                        <div className='progress-slider' style={{ width: '90%' }}></div>
+                                        <div className='progress-slider' style={{ width: `${displayB==="1"? percentage.node: "0%"}` }}></div>
                                     </div>
                                 </div>
                                 <div>
                                     <h4>Express</h4>
                                     <div className='progress-bar'>
-                                        <div className='progress-slider' style={{ width: '80%' }}></div>
+                                        <div className='progress-slider' style={{ width: `${displayB==="1"? percentage.express: "0%"}` }}></div>
                                     </div>
                                 </div>
                                 <div>
                                     <h4>Python</h4>
                                     <div className='progress-bar'>
-                                        <div className='progress-slider' style={{ width: '60%' }}></div>
+                                        <div className='progress-slider' style={{ width: `${displayB==="1"? percentage.python: "0%"}` }}></div>
                                     </div>
                                 </div>
                                 <div>
                                     <h4>Mongo db</h4>
                                     <div className='progress-bar'>
-                                        <div className='progress-slider' style={{ width: '70%' }}></div>
+                                        <div className='progress-slider' style={{ width: `${displayB==="1"? percentage.mongo: "0%"}` }}></div>
                                     </div>
                                 </div>
                             </DropdownB>

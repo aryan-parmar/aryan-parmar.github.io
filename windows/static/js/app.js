@@ -24,12 +24,55 @@ class AppWindow {
             processes.push(appId)
         }
     }
+    // DragElement(elmnt) {
+    //     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    //     if (document.querySelector(".app titlebar")) {
+    //         document.querySelector(".app titlebar").onmousedown = dragMouseDown;
+    //     } else {
+    //         elmnt.onmousedown = dragMouseDown;
+    //     }
+
+    //     function dragMouseDown(e) {
+    //         e = e || window.event;
+    //         e.preventDefault();
+    //         pos3 = e.clientX;
+    //         pos4 = e.clientY;
+    //         document.onmouseup = closeDragElement;
+    //         document.onmousemove = elementDrag;
+    //     }
+
+    //     function elementDrag(e) {
+    //         e = e || window.event;
+    //         e.preventDefault();
+    //         pos1 = pos3 - e.clientX;
+    //         pos2 = pos4 - e.clientY;
+    //         pos3 = e.clientX;
+    //         pos4 = e.clientY;
+    //         // set the element's new position:
+    //         if (pos4 <= 11) {
+    //             elmnt.classList.remove('minS')
+    //             elmnt.classList.add('maxS')
+    //             elmnt.style.height = '94vh';
+    //             elmnt.style.width = '100%';
+    //         }
+    //         else{
+    //             elmnt.classList.remove('maxS')
+    //             elmnt.classList.add('minS')
+    //         }
+    //         elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    //         elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    //     }
+
+    //     function closeDragElement() {
+    //         document.onmouseup = null;
+    //         document.onmousemove = null;
+    //     }
+    // }
     BasicFunctions(appId, d) {
         const titlebar = document.querySelector('.title-num-' + appId)
         const closeBtn = document.querySelector('.title-num-' + appId + ' #close');
         const MinimiseBtn = document.querySelector('.title-num-' + appId + ' #minimise');
         const MaximiseBtn = document.querySelector('.title-num-' + appId + ' #maximise');
-
         closeBtn.addEventListener('click', () => this.close(appId));
         titlebar.addEventListener("click", () => {
             document.querySelectorAll(".app").forEach((a) => {
@@ -60,16 +103,19 @@ class AppWindow {
             };
         })
         MinimiseBtn.addEventListener('click', () => this.minimise(appId));
-
-
+        
+        
+        // this.DragElement(document.querySelector('.app-num-' + appId))
         titlebar.addEventListener('dragstart', (e) => {
             e.dataTransfer.setDragImage(new Image(), 0, 0);
             e.dataTransfer.effectAllowed = "copyMove";
         })
         titlebar.addEventListener('dragenter', (e) => {
+            e.preventDefault()
             e.dataTransfer.effectAllowed = "copy";
         })
         titlebar.addEventListener('dragend', (e) => {
+            e.preventDefault()
             const currentapp = document.querySelector('.app-num-' + appId)
             if (e.pageY <= 11) {
                 currentapp.classList.remove('minS')
@@ -91,6 +137,7 @@ class AppWindow {
             }
         })
         titlebar.addEventListener('drag', (e) => {
+            e.preventDefault()
             const currentapp = document.querySelector('.app-num-' + appId)
             if (e.pageY <= 11) {
                 currentapp.classList.remove('minS')
@@ -109,6 +156,7 @@ class AppWindow {
             currentapp.style.top = (e.pageY) + 'px'
             currentapp.style.left = (e.screenX) + 'px'
         })
+
         titlebar.addEventListener('dblclick', () => {
             const currentapp = document.querySelector('.app-num-' + appId)
             if (currentapp.classList.contains('maxS')) {
@@ -157,7 +205,7 @@ class AppWindow {
             })
             a.style.zIndex = 10
         }
-        else if(a.style.zIndex === '6'){
+        else if (a.style.zIndex === '6') {
             document.querySelectorAll(".app").forEach((b) => {
                 b.style.zIndex = 6;
             })

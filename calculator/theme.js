@@ -12,7 +12,7 @@ const setTheme = () => {
         if (localStorage.getItem('theme') === 'theme-1') {
             document.body.style.backgroundColor = 'hsl(222, 26%, 31%)'
         }
-        if (localStorage.getItem('theme') === 'theme-2') {
+        else if (localStorage.getItem('theme') === 'theme-2') {
             document.body.style.backgroundColor = 'hsl(0, 0%, 90%)'
         } else {
             document.body.style.backgroundColor = 'hsl(268, 75%, 9%)'

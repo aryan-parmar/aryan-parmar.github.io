@@ -62,7 +62,7 @@ const HomeWrapper = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: ${props => props.theme.colors.background};
+    background-color: ${props => props.theme.colors.background2};
     `
 const Data = styled.div`
     max-width: 90%;

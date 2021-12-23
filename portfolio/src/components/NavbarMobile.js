@@ -62,6 +62,7 @@ export default function NavbarMobile() {
                         <NavLinks className='navlink' showN={showN} heightN={heigthN}>
                             <Li onClick={navButton} showN={showN}><a href='#home' style={{ color: theme.colors.primaryFont }}>HOME</a></Li>
                             <Li onClick={navButton} showN={showN}><a href='#about' style={{ color: theme.colors.primaryFont }}>ABOUT</a></Li>
+                            <Li onClick={navButton} showN={showN}><a href='#projects' style={{ color: theme.colors.primaryFont }}>PROJECTS</a></Li>
                             <Li onClick={navButton} showN={showN}><a href='#skills' style={{ color: theme.colors.primaryFont }}>SKILLS</a></Li>
                             <Li onClick={navButton} showN={showN}><a href='#contact' style={{ color: theme.colors.primaryFont }}>CONTACT</a></Li>
                         </NavLinks>
@@ -93,6 +94,7 @@ const Nav = styled.div`
 const Logo = styled.svg`
     margin-left: 25px;
     padding-top: 2%;
+    padding-bottom: 1%;
     height: 40px;
     width: auto;
     path{

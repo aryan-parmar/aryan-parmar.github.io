@@ -23,7 +23,7 @@ export default function About() {
                                 gaining experience in
                                 programming.
                             </P>
-                            <SkillButton href="#skills">KNOW MY SKILLS</SkillButton>
+                            <SkillButton href="#projects">EXPLORE MY PROJECTS</SkillButton>
                         </Wrapper>
                     </Data>
                 </AboutWrapper>

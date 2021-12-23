@@ -30,7 +30,7 @@ const ContactWrapper = styled.section`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: ${props => props.theme.colors.background};
+    background-color: ${props => props.theme.colors.background2};
     width: 100%;
 `
 const Heading = styled.div`

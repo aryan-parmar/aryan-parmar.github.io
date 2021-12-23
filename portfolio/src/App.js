@@ -11,6 +11,12 @@ const About = React.lazy(
             setTimeout(() => resolve(import("./components/About")), 100)
         )
 );
+const Myproject = React.lazy(
+    () =>
+        new Promise((resolve, reject) =>
+            setTimeout(() => resolve(import("./components/Myproject")), 200)
+        )
+);
 const Skills = React.lazy(
     () =>
         new Promise((resolve, reject) =>
@@ -34,6 +40,9 @@ function App() {
                 <Home theme={theme} />
                 <Suspense fallback={<div>Loading</div>}>
                     <About theme={theme} />
+                </Suspense>
+                <Suspense fallback={<div>Loading</div>}>
+                    <Myproject theme={theme} />
                 </Suspense>
                 <Suspense fallback={<div>Loading</div>}>
                     <Skills theme={theme} />

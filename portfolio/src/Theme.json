@@ -3,6 +3,7 @@
         "name": "light",
         "colors": {
             "background": "white",
+            "background2": "#ededed",
             "primaryFont": "black",
             "secondaryFont": "#676666",
             "btnActive": "#EBEBEB",
@@ -17,7 +18,8 @@
     "theme2":{
         "name": "Dark",
         "colors": {
-            "background": "#202124",
+            "background": "#191a1c",
+            "background2": "#202124",
             "primaryFont": "white",
             "secondaryFont": "#D9D9D9",
             "btnActive": "#4F525A",

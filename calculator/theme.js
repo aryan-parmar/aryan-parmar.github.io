@@ -6,7 +6,7 @@ const display = document.getElementById('display')
 const setTheme = () => {
     if (!localStorage.getItem('theme')) {
         localStorage.setItem('theme', 'theme-1')
-    } else {
+    }else if(localStorage.getItem('theme')==='theme-1' || localStorage.getItem('theme')==='theme-2'){
         app.classList.remove('theme-1')
         app.classList.add(localStorage.getItem('theme'))
         if (localStorage.getItem('theme') === 'theme-1') {
@@ -16,7 +16,13 @@ const setTheme = () => {
             document.body.style.backgroundColor = 'hsl(0, 0%, 90%)'
         } else {
             document.body.style.backgroundColor = 'hsl(268, 75%, 9%)'
+            if (!app.classList.contains('theme-1')) {
+                app.classList.add('theme-1')
+            }
         }
+    }else{
+        localStorage.setItem('theme', 'theme-1')
+        document.body.style.backgroundColor = 'hsl(222, 26%, 31%)'
     }
 }
 slider.addEventListener('click', () => {

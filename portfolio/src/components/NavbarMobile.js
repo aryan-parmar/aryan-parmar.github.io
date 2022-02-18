@@ -8,6 +8,7 @@ export default function NavbarMobile() {
     var [showN, setShowN] = React.useState('0')
     var [heigthN, setHeightN] = React.useState('0vh')
     let [showCircle, setShowCircle] = React.useState(false);
+    let [circleColor, setCircleColor] = React.useState(theme.colors.backgroundOp);
     React.useEffect(() => {
         if (localStorage.getItem("theme") === null) {
             localStorage.setItem("theme", "2")
@@ -42,8 +43,11 @@ export default function NavbarMobile() {
                 localStorage.setItem("theme", "1")
                 setTheme(Theme.theme1)
             }
+        }, 500);
+        setTimeout(()=>{
             setShowCircle(false)
-        }, 1500);
+            setCircleColor(theme.colors.background)
+        },2000)
         setShowCircle(true)
     }
     return (
@@ -65,7 +69,7 @@ export default function NavbarMobile() {
                                     <path id="bars-solid" d="M.846,64.592h22a.946.946,0,0,0,.846-1.02V61.02A.946.946,0,0,0,22.843,60h-22A.946.946,0,0,0,0,61.02v2.551A.946.946,0,0,0,.846,64.592Zm0,10.2h22a.946.946,0,0,0,.846-1.02V71.224a.946.946,0,0,0-.846-1.02h-22A.946.946,0,0,0,0,71.224v2.551A.946.946,0,0,0,.846,74.8Zm0,10.2h22a.946.946,0,0,0,.846-1.02V81.429a.946.946,0,0,0-.846-1.02h-22A.946.946,0,0,0,0,81.429V83.98A.946.946,0,0,0,.846,85Z" transform="translate(0 -60)" fill="#4b4b4b" />
                                 </Menu>
                             </Link>
-                            <AnimateCircle show={showCircle}>
+                            <AnimateCircle show={showCircle} col={circleColor}>
                             </AnimateCircle>
                         </IconHolder>
                         <NavLinks className='navlink' showN={showN} heightN={heigthN}>
@@ -119,7 +123,7 @@ const AnimateCircle = styled.div`
     /* transform: scale(50); */
     /* backdrop-filter: invert(50);     */
     mix-blend-mode: normal;
-    background: ${props => props.theme.colors.backgroundOp};
+    background: ${props => props.col};
     opacity: 0;
     /* isolation: isolate; */
     /* overflow: hidden; */

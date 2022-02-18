@@ -63,6 +63,7 @@ const HomeWrapper = styled.section`
     align-items: center;
     justify-content: center;
     background-color: ${props => props.theme.colors.background2};
+    position: relative;
     `
 const Data = styled.div`
     max-width: 90%;
@@ -94,6 +95,7 @@ const SocialIconContainer = styled.div`
     flex-direction: column;
     align-self: flex-start;
     margin-top: 30px;
+    z-index:2;
     @media (min-width: 1024px) {
         align-self: center;
         margin-top: 0;
@@ -107,6 +109,7 @@ const SocialIconContainer = styled.div`
 `
 const Svg = styled.svg`
     margin: 10px 0;
+    /* z-index:1; */
 `
 const Wrapper = styled.div`
     grid-column: 1 / span 2;
@@ -129,6 +132,7 @@ const Wrapper = styled.div`
 `
 const BackGround1 = styled.img`
     margin: auto;
+    z-index:999;
     @media (min-width: 1024px) {
         height: 60vh;
         max-width: 100%;

@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider, keyframes,css } from 'styled-components'
 import { ThemeContext } from './ThemeContext'
 import Theme from '../Theme.json'
 
@@ -7,18 +7,20 @@ export default function NavbarMobile() {
     var [theme, setTheme] = React.useContext(ThemeContext)
     var [showN, setShowN] = React.useState('0')
     var [heigthN, setHeightN] = React.useState('0vh')
-    React.useEffect(()=>{
-        if(localStorage.getItem("theme")===null){
+    let [showCircle, setShowCircle] = React.useState(false);
+    React.useEffect(() => {
+        if (localStorage.getItem("theme") === null) {
             localStorage.setItem("theme", "2")
             setTheme(Theme.theme2)
-        }else{
-            if(localStorage.getItem("theme")==="2"){
+        } else {
+            if (localStorage.getItem("theme") === "2") {
                 setTheme(Theme.theme2)
-            }else{
+            } else {
                 setTheme(Theme.theme1)
             }
         }
-    },[])
+    }, [])
+
     function navButton() {
         if (showN === '0') {
             setShowN('1')
@@ -30,14 +32,19 @@ export default function NavbarMobile() {
         }
     }
     function toggleTheme() {
-        if (theme.name === "light") {
-            localStorage.setItem("theme", "2")
-            setTheme(Theme.theme2)
-        }
-        else {
-            localStorage.setItem("theme", "1")
-            setTheme(Theme.theme1)
-        }
+        
+        setTimeout(() => {
+            if (theme.name === "light") {
+                localStorage.setItem("theme", "2")
+                setTheme(Theme.theme2)
+            }
+            else {
+                localStorage.setItem("theme", "1")
+                setTheme(Theme.theme1)
+            }
+            setShowCircle(false)
+        }, 1500);
+        setShowCircle(true)
     }
     return (
         <>
@@ -58,6 +65,8 @@ export default function NavbarMobile() {
                                     <path id="bars-solid" d="M.846,64.592h22a.946.946,0,0,0,.846-1.02V61.02A.946.946,0,0,0,22.843,60h-22A.946.946,0,0,0,0,61.02v2.551A.946.946,0,0,0,.846,64.592Zm0,10.2h22a.946.946,0,0,0,.846-1.02V71.224a.946.946,0,0,0-.846-1.02h-22A.946.946,0,0,0,0,71.224v2.551A.946.946,0,0,0,.846,74.8Zm0,10.2h22a.946.946,0,0,0,.846-1.02V81.429a.946.946,0,0,0-.846-1.02h-22A.946.946,0,0,0,0,81.429V83.98A.946.946,0,0,0,.846,85Z" transform="translate(0 -60)" fill="#4b4b4b" />
                                 </Menu>
                             </Link>
+                            <AnimateCircle show={showCircle}>
+                            </AnimateCircle>
                         </IconHolder>
                         <NavLinks className='navlink' showN={showN} heightN={heigthN}>
                             <Li onClick={navButton} showN={showN}><a href='#home' style={{ color: theme.colors.primaryFont }}>HOME</a></Li>
@@ -72,6 +81,11 @@ export default function NavbarMobile() {
         </>
     )
 }
+let animation = keyframes`
+    50% {opacity: 1}
+    99% {transform: scale(150); opacity: 0.9: 
+    100% {opacity:0;transform: scale(1)}
+`
 const NavbarWraper = styled.header`
     width: 100%;
     display: flex;
@@ -91,6 +105,30 @@ const Nav = styled.div`
     width: 98%;
     margin: auto;
 `
+const AnimateCircle = styled.div`
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    position: absolute;
+    right: 100px;
+    width: 27px;
+    height: 27px;
+    /* transform: scale(50); */
+    /* backdrop-filter: invert(50);     */
+    mix-blend-mode: normal;
+    background: ${props => props.theme.colors.backgroundOp};
+    opacity: 0;
+    /* isolation: isolate; */
+    /* overflow: hidden; */
+    animation:${props => props.show ? css `${animation} 2s ease` : ""};
+    /* animation: ease 2s ${animation} infinite;
+    animation-play-state: ${props => props.show ? "running" : "paused"}; */
+    /* z-index: 1000; */
+    /* transform-origin: center; */
+`
 const Logo = styled.svg`
     margin-left: 25px;
     padding-top: 2%;
@@ -109,6 +147,7 @@ const IconHolder = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* position: relative; */
 `
 const Dark = styled.svg`
     margin: 6px;
@@ -116,6 +155,7 @@ const Dark = styled.svg`
         fill: ${props => props.theme.colors.primaryFont};
         stroke: ${props => props.theme.colors.primaryFont};
     }
+    z-index:1;
 `
 const Menu = styled.svg`
     margin:6px;
@@ -140,6 +180,9 @@ const Link = styled.a`
 const Li = styled.li`
     transition: opacity 0.4s ease;
     opacity: ${props => props.showN};
+    a{
+        pointer-events: ${props => props.showN==='0' ? 'none': "all"};
+    }
 `
 const NavLinks = styled.ul`
         position: absolute;

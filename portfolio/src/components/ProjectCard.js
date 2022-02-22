@@ -7,7 +7,7 @@ export default function ProjectCard(props) {
         <Card>
             <a href={redirectUri} target="_blank" rel="noopener noreferrer">
                 <span><h3>{name}</h3></span>
-                <Image src={ImgUri} />
+                <Image src={ImgUri} alt={name}/>
             </a>
         </Card>
     )

@@ -14,7 +14,7 @@ export default function Myproject() {
                     <Wrapper>
                         <ProjectCard ImgUri="/sunnyside.jpg" redirectUri="/SunnySide" name="SunnySide"/>
                         <ProjectCard ImgUri="/calc.jpg" redirectUri="/calculator" name="Calculator"/>
-                        <ProjectCard ImgUri="/chatsapp.png" redirectUri="https://chatsapp.tk" name="Chatsapp"/>
+                        {/* <ProjectCard ImgUri="/chatsapp.png" redirectUri="https://chatsapp.cf" name="Chatsapp"/> */}
                     </Wrapper>
                 </ContactWrapper>
             </ThemeProvider>

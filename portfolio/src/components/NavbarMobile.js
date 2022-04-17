@@ -98,8 +98,9 @@ const NavbarWraper = styled.header`
     position: sticky;
     top: 0;
     left: 0;
-    background-color: ${props => props.theme.colors.background};
+    background-color: ${props => props.theme.colors.background}95;
     z-index: 1000;
+    backdrop-filter: blur(10px);
 `
 const Nav = styled.div`
     max-width: 1800px;

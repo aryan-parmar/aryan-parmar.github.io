@@ -2,7 +2,7 @@
     "theme1":{
         "name": "light",
         "colors": {
-            "background": "white",
+            "background": "#ffffff",
             "backgroundOp": "#191a1c",
             "background2": "#ededed",
             "primaryFont": "black",

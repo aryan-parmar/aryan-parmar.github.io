@@ -15,7 +15,7 @@ export default function Myproject() {
                         <ProjectCard ImgUri="/sunnyside.jpg" redirectUri="/SunnySide" name="SunnySide"/>
                         <ProjectCard ImgUri="/calc.jpg" redirectUri="/calculator" name="Calculator"/>
                         <ProjectCard ImgUri="/mechanical.png" redirectUri="/mechanical-keyboard" name="Mechanical keyboard"/>
-                        <ProjectCard ImgUri="/discClone.png" redirectUri="https://github.com/aary114/discord-clone" name="Discord clone"/>
+                        <ProjectCard ImgUri="/discClone.png" redirectUri="https://github.com/aryan-parmar/discord-clone" name="Discord clone"/>
                         {/* <ProjectCard ImgUri="/chatsapp.png" redirectUri="https://chatsapp.cf" name="Chatsapp"/> */}
                     </Wrapper>
                 </ContactWrapper>

@@ -28,9 +28,9 @@ export default function Skills() {
         scss: "88%",
         "react": "80%",
         styled:"85%",
-        node:"90%",
+        node:"80%",
         express:"80%",
-        python:"60%",
+        python:"70%",
         mongo:"70%",
     }
     return (

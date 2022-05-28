@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { ThemeProvider, keyframes,css } from 'styled-components'
+import styled, { ThemeProvider, keyframes, css } from 'styled-components'
 import { ThemeContext } from './ThemeContext'
 import Theme from '../Theme.json'
 
@@ -9,6 +9,7 @@ export default function NavbarMobile() {
     var [heigthN, setHeightN] = React.useState('0vh')
     let [showCircle, setShowCircle] = React.useState(false);
     let [circleColor, setCircleColor] = React.useState(theme.colors.backgroundOp);
+    var [themeAnimation, setThemeAnimation] = React.useContext(ThemeContext)
     React.useEffect(() => {
         if (localStorage.getItem("theme") === null) {
             localStorage.setItem("theme", "2")
@@ -33,25 +34,27 @@ export default function NavbarMobile() {
         }
     }
     function toggleTheme() {
-        
-        setTimeout(() => {
-            if (theme.name === "light") {
-                localStorage.setItem("theme", "2")
-                setTheme(Theme.theme2)
-            }
-            else {
-                localStorage.setItem("theme", "1")
-                setTheme(Theme.theme1)
-            }
-        }, 500);
-        setTimeout(()=>{
-            setShowCircle(false)
-            setCircleColor(theme.colors.background)
-        },2000)
-        setShowCircle(true)
+        if (!showCircle) {
+            setShowCircle(true)
+            setTimeout(() => {
+                if (theme.name === "light") {
+                    localStorage.setItem("theme", "2")
+                    setTheme(Theme.theme2)
+                }
+                else {
+                    localStorage.setItem("theme", "1")
+                    setTheme(Theme.theme1)
+                }
+            }, 500);
+            setTimeout(() => {
+                setShowCircle(false)
+                setCircleColor(theme.colors.background)
+            }, 2000)
+        }
     }
     return (
         <>
+            {console.log(theme)}
             <ThemeProvider theme={theme}>
                 <NavbarWraper>
                     <Nav>
@@ -60,9 +63,41 @@ export default function NavbarMobile() {
                         </Logo>
                         <IconHolder>
                             <Link onClick={toggleTheme}>
-                                <Dark width="24.372" height="27" viewBox="0 0 24.372 27">
+                                {/* <Dark width="24.372" height="27" viewBox="0 0 24.372 27">
                                     <path id="moon-solid" d="M39.711,25a12.476,12.476,0,0,0,9.71-4.629.586.586,0,0,0-.565-.945A9.792,9.792,0,0,1,42.178,1.294.586.586,0,0,0,41.995.209,12.5,12.5,0,1,0,39.711,25Z" transform="translate(-26.211 1)" fill="none" stroke="#000" strokeWidth="2" />
-                                </Dark >
+                                </Dark > */}
+                                <Dark
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="27"
+                                    height="27"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="transparent"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    style={{ transform: "rotate(40deg) scale(1.2)" }}
+                                >
+                                    {themeAnimation.name === "Dark" ?
+                                        <mask id="mask">
+                                            <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                                            <circle cx="12" cy="2" r="9" fill="#191a1c" />
+                                        </mask>
+                                        : <> </>}
+                                    <circle fill={theme.colors.backgroundOp} cx="12" cy="12" r={themeAnimation.name === "Dark" ? "9" : "5"} mask="url(#mask)" />
+                                    {themeAnimation.name !== "Dark" ? 
+                                    <g stroke="currentColor" strokeWidth={2} strokeLinecap="round">
+                                        <line x1="12" y1="1" x2="12" y2="3" />
+                                        <line x1="12" y1="21" x2="12" y2="23" />
+                                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                                        <line x1="1" y1="12" x2="3" y2="12" />
+                                        <line x1="21" y1="12" x2="23" y2="12" />
+                                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                                    </g>
+                                    : <></>}
+                                </Dark>
                             </Link>
                             <Link onClick={navButton}>
                                 <Menu width="23.689" height="25" viewBox="0 0 23.689 25">
@@ -128,7 +163,7 @@ const AnimateCircle = styled.div`
     opacity: 0;
     /* isolation: isolate; */
     /* overflow: hidden; */
-    animation:${props => props.show ? css `${animation} 2s ease` : ""};
+    animation:${props => props.show ? css`${animation} 2s ease` : ""};
     /* animation: ease 2s ${animation} infinite;
     animation-play-state: ${props => props.show ? "running" : "paused"}; */
     /* z-index: 1000; */
@@ -186,7 +221,7 @@ const Li = styled.li`
     transition: opacity 0.4s ease;
     opacity: ${props => props.showN};
     a{
-        pointer-events: ${props => props.showN==='0' ? 'none': "all"};
+        pointer-events: ${props => props.showN === '0' ? 'none' : "all"};
     }
 `
 const NavLinks = styled.ul`

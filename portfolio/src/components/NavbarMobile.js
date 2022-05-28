@@ -78,15 +78,15 @@ export default function NavbarMobile() {
                                     strokeLinejoin="round"
                                     style={{ transform: "rotate(40deg) scale(1.2)" }}
                                 >
-                                    {themeAnimation.name === "Dark" ?
+                                    {themeAnimation.name !== "Dark" ?
                                         <mask id="mask">
-                                            <rect x="0" y="0" width="100%" height="100%" fill="white" />
-                                            <circle cx="12" cy="2" r="9" fill="#191a1c" />
+                                            <rect x="0" y="0" width="100%" height="100%" fill={theme.colors.background} />
+                                            <circle cx="12" cy="2" r="9" fill={theme.colors.backgroundOp} />
                                         </mask>
                                         : <> </>}
-                                    <circle fill={theme.colors.backgroundOp} cx="12" cy="12" r={themeAnimation.name === "Dark" ? "9" : "5"} mask="url(#mask)" />
-                                    {themeAnimation.name !== "Dark" ? 
-                                    <g stroke="currentColor" strokeWidth={2} strokeLinecap="round">
+                                    <circle fill={theme.colors.backgroundOp} cx="12" cy="12" r={themeAnimation.name !== "Dark" ? "9" : "5"} mask="url(#mask)" />
+                                    {themeAnimation.name === "Dark" ? 
+                                    <g stroke={theme.colors.backgroundOp} strokeWidth={2} strokeLinecap="round">
                                         <line x1="12" y1="1" x2="12" y2="3" />
                                         <line x1="12" y1="21" x2="12" y2="23" />
                                         <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />

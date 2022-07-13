@@ -17,8 +17,10 @@ export default function NavbarMobile() {
         } else {
             if (localStorage.getItem("theme") === "2") {
                 setTheme(Theme.theme2)
+                document.querySelector('meta[name="theme-color"]')?.setAttribute('content', Theme.theme2.colors.background);
             } else {
                 setTheme(Theme.theme1)
+                document.querySelector('meta[name="theme-color"]')?.setAttribute('content', Theme.theme1.colors.background);
             }
         }
     }, [])
@@ -40,10 +42,12 @@ export default function NavbarMobile() {
                 if (theme.name === "light") {
                     localStorage.setItem("theme", "2")
                     setTheme(Theme.theme2)
+                    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', Theme.theme2.colors.background);
                 }
                 else {
                     localStorage.setItem("theme", "1")
                     setTheme(Theme.theme1)
+                    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', Theme.theme1.colors.background);
                 }
             }, 500);
             setTimeout(() => {

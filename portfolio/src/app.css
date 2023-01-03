@@ -4,10 +4,11 @@
   padding: 0;
 }
 
-body, html {
+body,
+html {
   height: 100%;
   width: 100%;
-  font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Montserrat", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -29,7 +30,7 @@ body, html {
   margin: 10px 0;
   width: 100%;
   height: 8px;
-  background-color: #E4E4E4;
+  background-color: #e4e4e4;
   border-radius: 20px;
 }
 
@@ -39,7 +40,7 @@ body, html {
   transition: width 1s ease;
   border-radius: 20px;
   height: 100%;
-  background-color: #A86DDE;
+  background-color: #a86dde;
 }
 
 .rotate {

@@ -10,17 +10,20 @@ export default function NavbarMobile() {
     let [showCircle, setShowCircle] = React.useState(false);
     let [circleColor, setCircleColor] = React.useState(theme.colors.backgroundOp);
     var [themeAnimation, setThemeAnimation] = React.useContext(ThemeContext)
+    
     React.useEffect(() => {
         if (localStorage.getItem("theme") === null) {
             localStorage.setItem("theme", "2")
             setTheme(Theme.theme2)
         } else {
             if (localStorage.getItem("theme") === "2") {
-                setTheme(Theme.theme2)
                 document.querySelector('meta[name="theme-color"]')?.setAttribute('content', Theme.theme2.colors.background);
+                setTheme(Theme.theme2)
+                setCircleColor(Theme.theme2.colors.backgroundOp)
             } else {
-                setTheme(Theme.theme1)
                 document.querySelector('meta[name="theme-color"]')?.setAttribute('content', Theme.theme1.colors.background);
+                setTheme(Theme.theme1)
+                setCircleColor(Theme.theme1.colors.backgroundOp)
             }
         }
     }, [])
@@ -40,14 +43,14 @@ export default function NavbarMobile() {
             setShowCircle(true)
             setTimeout(() => {
                 if (theme.name === "light") {
+                    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', Theme.theme2.colors.background);
                     localStorage.setItem("theme", "2")
                     setTheme(Theme.theme2)
-                    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', Theme.theme2.colors.background);
                 }
                 else {
+                    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', Theme.theme1.colors.background);
                     localStorage.setItem("theme", "1")
                     setTheme(Theme.theme1)
-                    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', Theme.theme1.colors.background);
                 }
             }, 500);
             setTimeout(() => {
@@ -58,7 +61,6 @@ export default function NavbarMobile() {
     }
     return (
         <>
-            {console.log(theme)}
             <ThemeProvider theme={theme}>
                 <NavbarWraper>
                     <Nav>

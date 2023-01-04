@@ -6,18 +6,18 @@ export default function Preloader(props) {
   var [theme, setTheme] = React.useContext(ThemeContext);
   const stroke = keyframes`
     0%{
-		stroke-dashoffset: 25%; 
-        stroke-dasharray: 0 50%; 
+		  stroke-dashoffset: 25%; 
+      stroke-dasharray: 0 50%; 
 	}
 	80%{
-        stroke-width: 1.5;
-        fill: ${theme.colors.background2};
+      stroke-width: 1.5;
+      fill: ${theme.colors.background2};
     }
 	100%{
-        fill: ${theme.colors.secondaryFont};
-		stroke-dashoffset: -25%; 
-        stroke-dasharray: 50% 0; 
-        stroke-width: 0;
+      fill: ${theme.colors.secondaryFont};
+		  stroke-dashoffset: -25%; 
+      stroke-dasharray: 50% 0; 
+      stroke-width: 0;
 	}
 `;
   const PreloaderInner = styled.div`

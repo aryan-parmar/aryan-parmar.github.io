@@ -5,12 +5,7 @@ import { ThemeContext } from "./components/ThemeContext";
 import Theme from "./Theme.json";
 import { createGlobalStyle } from "styled-components";
 import Preloader from "./components/Preloader";
-const Home = React.lazy(
-  () =>
-    new Promise((resolve, reject) =>
-      setTimeout(() => resolve(import("./components/Home")), 100)
-    )
-);
+import Home from "./components/Home";
 const About = React.lazy(
   () =>
     new Promise((resolve, reject) =>
